@@ -1,0 +1,71 @@
+/* Стили для дней недели */
+.days-of-week {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+    margin-right: 10px;
+    float: left;
+}
+
+.day-name {
+    font-size: 18px; /* Увеличенный размер текста дней недели */
+    text-align: right;
+}
+
+/* Стили для графика */
+.contribution-graph {
+    display: grid;
+    grid-template-columns: repeat(51, 20px); /* Увеличенная ширина столбцов */
+    grid-template-rows: repeat(7, 20px); /* Увеличенная высота строк */
+    gap: 2px; /* Увеличенный зазор между ячейками */
+    border: 1px solid #ccc;
+    float: left;
+}
+.contribution-graph div:hover {
+    border: 1px solid #808080;
+}
+/* Добавьте стили для цветов блоков в зависимости от количества контрибуций */
+/* Нет контрибуций */
+.cell-no-contributions {
+    background-color: #F0FFFF;
+}
+
+/* 1-9 контрибуций */
+.cell-low-contributions {
+    background-color: #87CEFA;
+}
+
+/* 10-19 контрибуций */
+.cell-medium-contributions {
+    background-color: #87CEEB;
+}
+
+/* 20-29 контрибуций */
+.cell-high-contributions {
+    background-color: #4682B4;
+}
+
+/* 30+ контрибуций */
+.cell-very-high-contributions {
+    background-color: #0000FF;
+}
+
+
+/* Стили для информационного оверлея */
+.info-overlay {
+    display: none;
+    position: absolute;
+    padding: 10px; /* Добавьте внутренний отступ для рамки */
+    border: 1px solid #000; /* Добавьте рамку */
+    background-color: rgba(9, 9, 9, 0.9); /* Полупрозрачный фон */
+    color: #fdfdfd;
+    font-size: 14px; /* Уменьшенный размер текста */
+    z-index: 2; /* Выше, чем график */
+    border-radius: 5%;
+}
+
+/* Убираем выделение текста при клике */
+.info-overlay::selection {
+    background: transparent;
+}
